@@ -1,11 +1,13 @@
-import OrdersTable from "./components/OrdersTable";
-import Layout from "./layout";
+import { BrowserRouter as Router } from "react-router-dom";
+import RouteInit from "./routes/RouteInit"
 
 const App = () => {
 	return (
-		<Layout>
-			<OrdersTable />
-		</Layout>
+		<Router>
+			<div className="w-screen h-screen flex justify-center items-center">
+				<RouteInit />
+			</div>
+		</Router>
 	);
 };
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import {
 	Calendar,
 	ChatbubbleEllipses,
@@ -13,7 +13,7 @@ import {
 } from "react-ionicons";
 const Sidebar = () => {
 	const [activePage, setActivePage] = useState("home");
-	const indicatorDiv = useRef<HTMLDivElement>(null);
+	// const indicatorDiv = useRef<HTMLDivElement>(null);
 
 	const sidebarItems = [
 		{ title: "home", icon: Grid },
@@ -26,28 +26,28 @@ const Sidebar = () => {
 		{ title: "calendar", icon: Calendar },
 	];
 
-	const handleItemClick = (item: any, e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+	const handleItemClick = (item: any) => {
 		setActivePage(item.title);
 
-		const offsetTop = e.currentTarget.offsetTop;
-		const scrollTop = document.documentElement.scrollTop;
-		const topPosition = `${offsetTop - scrollTop}px`;
+		// const offsetTop = e.currentTarget.offsetTop;
+		// const scrollTop = document.documentElement.scrollTop;
+		// const topPosition = `${offsetTop - scrollTop}px`;
 
-		if (indicatorDiv.current) {
-			indicatorDiv.current.style.top = topPosition;
-		}
+		// if (indicatorDiv.current) {
+		// 	indicatorDiv.current.style.top = topPosition;
+		// }
 	};
 	return (
-		<div className="fixed left-0 top-[70px] w-[76px] h-[calc(100vh-70px)] shadow-sm bg-white border-r border-gray-200 flex items-center flex-col gap-5">
-			<div
+		<div className="pt-10 fixed left-0 top-[0] w-[76px] h-[calc(100vh)] shadow-sm bg-white border-r border-gray-200 flex items-center flex-col gap-5">
+			{/* <div
 				className="w-[3px] h-[45px] bg-[#4379EE] absolute top-0 right-0 transition-all duration-300"
 				ref={indicatorDiv}
-			></div>
+			></div> */}
 			{sidebarItems.map((item) => (
 				<div
 					key={item.title}
 					className="cursor-pointer w-full py-2 flex items-center justify-center"
-					onClick={(e) => handleItemClick(item, e)}
+					onClick={() => handleItemClick(item)}
 				>
 					<item.icon
 						color={activePage === item.title ? `#4379EE` : `#bfbfbf`}

@@ -26,7 +26,7 @@ export const LoginForm = () => {
 
         if (username === 'admin' && password === 'admin') {
             localStorage.setItem('account', JSON.stringify({ username, password }));
-            navigate('/ReservationForecast');
+            navigate('/UserManagement');
             return
         }
 
