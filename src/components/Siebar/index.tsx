@@ -1,33 +1,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import {
-	Calendar,
 	ChatbubbleEllipses,
 	Cog,
 	Cube,
-	DocumentText,
-	FileTrayFull,
-	Grid,
-	Heart,
-	Layers,
+	Heart
 } from "react-ionicons";
+import { useLocation, useNavigate } from "react-router-dom";
 const Sidebar = () => {
-	const [activePage, setActivePage] = useState("home");
+
+	const location = useLocation();
+
+	const path = location?.pathname;
+
+	console.log(path)
+
+	const [activePage, setActivePage] = useState(path);
+	const navigate = useNavigate();
 	// const indicatorDiv = useRef<HTMLDivElement>(null);
 
 	const sidebarItems = [
-		{ title: "home", icon: Grid },
-		{ title: "products", icon: Cube },
-		{ title: "favourites", icon: Heart },
-		{ title: "messages", icon: ChatbubbleEllipses },
-		{ title: "applications", icon: Layers },
-		{ title: "archive", icon: FileTrayFull },
-		{ title: "documents", icon: DocumentText },
-		{ title: "calendar", icon: Calendar },
+		// { title: "UserManagement", icon: Grid },
+		{ title: "/AuthorManagement", icon: Cube },
+		{ title: "/PublicherManagement", icon: Heart },
+		{ title: "/BookManagement", icon: ChatbubbleEllipses },
+		// { title: "/applications", icon: Layers },
+		// { title: "/archive", icon: FileTrayFull },
+		// { title: "/documents", icon: DocumentText },
+		// { title: "/calendar", icon: Calendar },
 	];
 
 	const handleItemClick = (item: any) => {
 		setActivePage(item.title);
+		navigate(`${item.title}`)
 
 		// const offsetTop = e.currentTarget.offsetTop;
 		// const scrollTop = document.documentElement.scrollTop;

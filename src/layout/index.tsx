@@ -7,11 +7,10 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<div className="w-screen bg-slate-100 relative">
+		<div className="w-screen bg-slate-100 relative h-screen overflow-hidden">
 			<Sidebar />
 			{/* <Navbar /> */}
-			<div className="w-full ml-[76px] mt-[50px] border-t border-gray-200 px-6 py-3 box-border flex flex-col">
-				<span className="font-bold text-[#202224] text-[30px]">Dashboard</span>
+			<div className="w-full h-full ml-[76px] mt-[30px] border-t border-gray-200 px-6 py-3 box-border flex flex-col">
 				{children}
 			</div>
 		</div>
