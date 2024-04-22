@@ -42,6 +42,12 @@ export type Book = {
   notes: string,
   publishedDate: Date,
   publisher: Publisher,
-  id: 2
+  id: number
+  bookAuthors: [
+    {
+      id: number,
+      authorId: number,
+    }
+  ]
 }
 
