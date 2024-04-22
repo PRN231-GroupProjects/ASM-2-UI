@@ -30,7 +30,6 @@ export const PublisherModal = ({
             onClose()
             navigate(0)
         }
-        // console.log(res)
     }
 
     useEffect(() => {
@@ -81,15 +80,23 @@ export const PublisherModal = ({
                                 <Dialog.Panel className="w-full transform overflow-hidden rounded-lg border border-[#49494d] bg-[#FFF] p-6 text-left align-middle shadow-xl transition-all lg:w-[692px]">
                                     <div className='flex flex-col gap-2 p-2'>
                                         <h1 className='font-bold text-lg'>Update Publisher</h1>
+
+                                        <label className='text-sm font-semibold'>Name</label>
                                         <input placeholder='Name' value={name} onChange={
                                             (e) => setName(e.target.value)
                                         } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+
+                                        <label className='text-sm font-semibold'>Address</label>
                                         <input placeholder='City' value={city} onChange={
                                             (e) => setCity(e.target.value)
                                         } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+
+                                        <label className='text-sm font-semibold'>Location</label>
                                         <input placeholder='State' value={state} onChange={
                                             (e) => setState(e.target.value)
                                         } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+
+                                        <label className='text-sm font-semibold'>Country</label>
                                         <input placeholder='Country' value={country} onChange={
                                             (e) => setCountry(e.target.value)
                                         } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />

@@ -9,5 +9,4 @@ export const PageRoutes: Record<string, () => JSX.Element> = {
     ['/AuthorManagement']: AuthorManagement,
     ['/PublicherManagement']: PublicherManagement,
     ['/BookManagement']: BookManagement,
-
 }

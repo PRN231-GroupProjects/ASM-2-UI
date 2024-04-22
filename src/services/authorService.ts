@@ -3,8 +3,8 @@ import { Author, PaginatedItems } from "../types/response";
 import { http } from "../utils/http"
 
 
-export const getAuthor = () => {
-    return http.get<PaginatedItems<Author>>('/api/author');
+export const getAuthor = (value?: string) => {
+    return http.get<PaginatedItems<Author>>(`/api/author${value ? `?search=${value}` : ''}`);
 }
 
 export const getAuthorDetail = (id: string) => {

@@ -13,8 +13,6 @@ const Sidebar = () => {
 
 	const path = location?.pathname;
 
-	console.log(path)
-
 	const [activePage, setActivePage] = useState(path);
 	const navigate = useNavigate();
 	// const indicatorDiv = useRef<HTMLDivElement>(null);

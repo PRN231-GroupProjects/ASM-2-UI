@@ -40,7 +40,6 @@ export const AuthorAdd = () => {
             onClose()
             navigate(0)
         }
-        // console.log(res)
     }
 
     const onClose = () => {
@@ -78,37 +77,61 @@ export const AuthorAdd = () => {
                                 <Dialog.Panel className="w-full transform overflow-hidden rounded-lg border border-[#49494d] bg-[#FFF] p-6 text-left align-middle shadow-xl transition-all lg:w-[692px]">
                                     <div className='flex flex-col gap-2 p-2'>
                                         <h1 className='font-bold text-lg'>Update Publisher</h1>
-                                        <input placeholder='Last Name' value={lastName} onChange={
-                                            (e) => setLastName(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Last name</p>
+                                            <input placeholder='Last Name' value={lastName} onChange={
+                                                (e) => setLastName(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
-                                        <input placeholder='First Name' value={firstName} onChange={
-                                            (e) => setFirstName(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">First name</p>
+                                            <input placeholder='First Name' value={firstName} onChange={
+                                                (e) => setFirstName(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
-                                        <input placeholder='Phone' value={phone} onChange={
-                                            (e) => setPhone(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Phone</p>
+                                            <input placeholder='Phone' value={phone} onChange={
+                                                (e) => setPhone(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
-                                        <input placeholder='Address' value={address} onChange={
-                                            (e) => setAddress(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Address</p>
+                                            <input placeholder='Address' value={address} onChange={
+                                                (e) => setAddress(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">City</p>
+                                            <input placeholder='City' value={city} onChange={
+                                                (e) => setCity(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
-                                        <input placeholder='City' value={city} onChange={
-                                            (e) => setCity(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                                        <input placeholder='State' value={state} onChange={
-                                            (e) => setState(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                                        <input placeholder='Zip' value={zip} onChange={
-                                            (e) => setZip(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">State</p>
+                                            <input placeholder='State' value={state} onChange={
+                                                (e) => setState(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
-                                        <input placeholder='Email' value={email} onChange={
-                                            (e) => setEmail(e.target.value)
-                                        } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Zip</p>
+                                            <input placeholder='Zip' value={zip} onChange={
+                                                (e) => setZip(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
+                                        <div>
+                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Email</p>
+                                            <input placeholder='Email' value={email} onChange={
+                                                (e) => setEmail(e.target.value)
+                                            } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                        </div>
 
 
                                         <button className="bg-[#f93c65] text-white p-2 rounded-md w-full"

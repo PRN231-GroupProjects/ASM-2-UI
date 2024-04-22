@@ -2,8 +2,8 @@ import { UpdatePublisher } from "../types/request";
 import { PaginatedItems, Publisher } from "../types/response";
 import { http } from "../utils/http"
 
-export const getPublisher = () => {
-    return http.get<PaginatedItems<Publisher>>('/api/publisher');
+export const getPublisher = (search?: string) => {
+    return http.get<PaginatedItems<Publisher>>(`/api/publisher${search ? `?search=${search}` : ''}`);
 }
 
 export const getPublisherDetail = (id: string) => {
