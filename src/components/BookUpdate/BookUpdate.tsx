@@ -3,20 +3,14 @@ import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createBookDetail, getBookDetail } from "../../services/bookService";
 import { UpdateBook } from "../../types/request";
-import { PublisherInput } from "../PublisherInput/PublisherInput";
-import { AuthorInput } from "../AuthorInput/AuthorInput";
 
 export const BookUpdate = ({ id }: { id: string }) => {
     const [title, setTitle] = useState<string>('');
     const [type, setType] = useState<string>('');
-    const [publisherId, setPublisherId] = useState<number>(0);
     const [price, setPrice] = useState<number>(1);
     const [advance, setAdvance] = useState<number>(1);
     const [royalty, setRoyalty] = useState<number>(1);
-    const [ytdSales, setYtdSales] = useState<number>(1);
     const [notes, setNotes] = useState<string>('');
-    const [authorIds, setAuthorIds] = useState<number[]>([]);
-
 
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
@@ -27,14 +21,10 @@ export const BookUpdate = ({ id }: { id: string }) => {
         const data: UpdateBook = {
             title: title,
             type: type,
-            publisherId: publisherId,
             price: price,
             advance: advance,
             royalty: royalty,
-            ytdSales: ytdSales,
             notes: notes,
-            publishedDate: new Date().toISOString(),
-            authorIds: authorIds
         }
         const res = await createBookDetail(data)
         if (res.data) {
@@ -50,13 +40,10 @@ export const BookUpdate = ({ id }: { id: string }) => {
             if (success) {
                 setTitle(data?.title as string)
                 setType(data?.type as string)
-                setPublisherId(data?.publisherId as number)
                 setPrice(data?.price as number)
                 setAdvance(data?.advance as number)
                 setRoyalty(data?.royalty as number)
-                setYtdSales(data?.ytdSales as number)
                 setNotes(data?.notes as string)
-                setAuthorIds([data?.bookAuthors[0]?.authorId] as number[])
 
             }
         }
@@ -115,11 +102,6 @@ export const BookUpdate = ({ id }: { id: string }) => {
                                         </div>
 
                                         <div>
-                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Publisher</p>
-                                            <PublisherInput setSelectedPublisher={(id: number) => setPublisherId(id)} id={publisherId as number} />
-                                        </div>
-
-                                        <div>
                                             <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Price</p>
                                             <input placeholder='Price' value={price} onChange={
                                                 (e) => setPrice(Number(e.target.value))
@@ -141,26 +123,10 @@ export const BookUpdate = ({ id }: { id: string }) => {
                                         </div>
 
                                         <div>
-                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">YTD Sales</p>
-                                            <input placeholder='YTD Sales' value={ytdSales} onChange={
-                                                (e) => setYtdSales(Number(e.target.value))
-                                            } required type='number' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                                        </div>
-
-                                        <div>
                                             <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Notes</p>
                                             <input placeholder='Notes' value={notes} onChange={
                                                 (e) => setNotes(e.target.value)
                                             } required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                                        </div>
-
-                                        <div>
-                                            <p className="block mb-0.5 text-sm font-medium text-gray-900 dark:text-white">Author</p>
-                                            {/* <input placeholder='Author Ids' value={authorIds[0]} onChange={
-                                                (e) => setAuthorIds([Number(e.target.value)])
-                                            } required type='number' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                                         */}
-                                            <AuthorInput setSelectedPublisher={(id: number) => setAuthorIds([id])} id={authorIds[0]} />
                                         </div>
 
                                         <button className="bg-[#f93c65] text-white p-2 rounded-md w-full"

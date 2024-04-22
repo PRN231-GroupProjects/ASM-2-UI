@@ -19,12 +19,12 @@ export type UpdateAuthor = {
 export type UpdateBook = {
     title: string,
     type: string,
-    publisherId: number,
+    publisherId?: number,
     price: number,
     advance: number,
     royalty: number,
-    ytdSales: number,
+    ytdSales?: number,
     notes: string,
-    publishedDate: string,
-    authorIds: number[]
+    publishedDate?: string,
+    authorIds?: number[]
 }
